@@ -15,9 +15,9 @@ Check the live demo: [Live Demo](https://scentsymphony.tech/)
 ## Screenshots of the Project
 
 <h3 align='center'>Home Page</h3>
-<div align='center'><img style="width:30%" src='/src/images/logo/fullpage.png'/></div>
+<div align='center'><img src='/src/images/logo/fullpage.png'/></div>
 <br>
 <h3 align='center'>Shopping page</h3>
-<div align='center'><img style="width:30%" src='/src/images/logo/logo.png'/></div>
+<div align='center'><img src='/src/images/logo/shoppingpage.png'/></div>
 
-I won't be adding more images for the other pages. You can visit the demo to see them. I've purchased a domain for the site and launched it on Netlify. It has a Firebase API where all the accounts are stored.
+<p align='center'>I won't be adding more images for the other pages. You can visit the demo to see them. I've purchased a domain for the site and launched it on Netlify. It has a Firebase API where all the accounts are stored.</p>
