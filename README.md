@@ -14,10 +14,12 @@ Check the live demo: [Live Demo](https://scentsymphony.tech/)
 
 ## Screenshots of the Project
 
-<h3 align='center'>Home Page</h3>
+<h3 align='center'>Home Page 🏡</h3>
 <div align='center'><img src='/src/images/logo/fullpage.png'/></div>
 <br>
-<h3 align='center'>Shopping page</h3>
+<br>
+<h3 align='center'>Shopping page 🛍️</h3>
 <div align='center'><img src='/src/images/logo/shoppingpage.png'/></div>
-
-<p align='center'>I won't be adding more images for the other pages. You can visit the demo to see them. I've purchased a domain for the site and launched it on Netlify. It has a Firebase API where all the accounts are stored.</p>
+<br>
+<br>
+<h4 align='center'>**I won't be adding more images for the other pages. You can visit the demo to see them. I've purchased a domain for the site and launched it on Netlify. It has a Firebase API where all the accounts are stored.**</h4>
