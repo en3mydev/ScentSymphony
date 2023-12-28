@@ -1,13 +1,1501 @@
-body {
+@import url("https://fonts.googleapis.com/css2?family=Karla:wght@400;500;600;700;800&display=swap");
+
+* {
+  box-sizing: border-box;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #de8117 #ffffff;
+}
+
+/* Chrome, Edge and Safari */
+*::-webkit-scrollbar {
+  width: 10px;
+  width: 10px;
+}
+*::-webkit-scrollbar-track {
+  border-radius: 5px;
+  background-color: #ffffff;
+}
+
+*::-webkit-scrollbar-track:hover {
+  background-color: #ffffff;
+}
+
+*::-webkit-scrollbar-track:active {
+  background-color: #ffffff;
+}
+
+*::-webkit-scrollbar-thumb {
+  border-radius: 20px;
+  background-color: #de8117;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background-color: #de8117;
+}
+
+*::-webkit-scrollbar-thumb:active {
+  background-color: #ff7b00;
+}
+
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+body {
+  position: relative;
+  font-family: "Karla", sans-serif;
+  background-color: #f8f8f8;
+}
+
+.container {
+  max-width: 133rem;
+  margin: 0 auto;
+  padding: 0 2.5rem;
+}
+
+.navbar {
+  max-width: 133rem;
+  width: 95%;
+  height: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2.7rem 2rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: transparent;
+  z-index: 99999;
+  margin: 0 auto;
+}
+
+.navbar__img {
+  width: 14.5rem;
+}
+
+.navbar__img img {
+  width: 100%;
+  height: 100%;
+}
+
+.navbar__links {
+  display: flex;
+  list-style: none;
+  gap: 2.1rem;
+}
+
+.navbar__links a {
+  font-size: 1.6rem;
+  font-family: "Karla", sans-serif;
+  font-weight: 700;
+  color: #010103;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.navbar__links a:hover {
+  color: #de8117;
+}
+
+@media (max-width: 1000px) {
+  .navbar__links {
+    display: none;
+  }
+}
+
+.navbar__buttons {
+  display: flex;
+  gap: 2.5rem;
+  font-size: 1.6rem;
+  font-family: "Karla", sans-serif;
+  font-weight: 700;
+  align-items: center;
+}
+
+@media (max-width: 1000px) {
+  .navbar__buttons {
+    display: none;
+  }
+}
+
+.navbar__buttons__sign-in {
+  color: #000000;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.navbar__buttons__sign-in:hover {
+  color: #de8117;
+}
+
+.navbar__buttons__register {
+  background-color: #de8117;
+  color: white;
+  padding: 1.5rem 3rem;
+  border-radius: 3px;
+  box-shadow: 0 10px 15px 0 rgb(222 129 23 / 35%);
+  transition: all 0.3s;
+}
+
+.navbar__buttons__register:hover {
+  box-shadow: 0 10px 15px 0 rgb(222 129 23 / 50%);
+  background-color: #ff8a05;
+}
+
+.navbar__buttons__logout {
+  background-color: #de8117;
+  color: white;
+  padding: 1.5rem 3rem;
+  border-radius: 3px;
+  box-shadow: 0 10px 15px 0 rgb(222 129 23 / 35%);
+  transition: all 0.3s;
+  border: none;
+  font-family: "Karla", sans-serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+
+.navbar__buttons__logout:hover {
+  box-shadow: 0 10px 15px 0 rgb(222 129 23 / 50%);
+  background-color: #ff8a05;
+}
+
+.navbar__buttons a {
+  text-decoration: none;
+}
+
+.mobile-hamb {
+  font-size: 2.8rem;
+  display: none;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.mobile-hamb:hover {
+  color: #de8117;
+}
+
+@media (max-width: 1000px) {
+  .mobile-hamb {
+    display: flex;
+  }
+}
+
+.mobile-navbar {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: -100%;
+  background-color: #ffffff;
+  z-index: 999999;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.5s ease-in-out;
+}
+
+.mobile-navbar__close {
+  font-size: 3rem;
+  position: absolute;
+  top: 3.5rem;
+  right: 3.5rem;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.mobile-navbar__close:hover {
+  color: #de8117;
+}
+
+.mobile-navbar__links {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  font-size: 2.3rem;
+  gap: 3rem;
+  text-align: center;
+}
+
+.mobile-navbar__links li a {
+  text-decoration: none;
+  color: #010103;
+  font-weight: 500;
+  transition: all 0.3s;
+}
+
+.mobile-navbar__links li a:hover {
+  color: #de8117;
+}
+
+.hero-section {
+  width: 100%;
+  height: 97vh;
+  background-color: #f8f8f8;
+  position: relative;
+}
+
+.open-nav {
+  left: 0;
+}
+
+.bg-shape {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 1;
+}
+
+@media (max-width: 800px) {
+  .bg-shape {
+    display: none;
+  }
+}
+
+.hero-content {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+@media (max-width: 800px) {
+  .hero-content {
+    justify-content: center;
+  }
+}
+
+.hero-content__text {
+  display: flex;
+  flex-direction: column;
+  z-index: 3;
+  max-width: 50rem;
+  margin-top: 5rem;
+}
+
+@media (max-width: 800px) {
+  .hero-content__text {
+    text-align: center;
+    align-items: center;
+  }
+}
+
+.hero-content__text h4 {
+  font-size: 2.2rem;
+  font-family: "Karla", sans-serif;
+  color: #010103;
+}
+
+.hero-content__text h1 {
+  font-size: 5.2rem;
+  font-family: "Karla", sans-serif;
+  font-weight: 700;
+  color: #010103;
+  line-height: 1.2;
+  margin-top: 1rem;
+  margin-bottom: 2.3rem;
+}
+
+.hero-content__text span {
+  color: #de8117;
+}
+
+.hero-content__text p {
+  font-size: 1.6rem;
+  font-family: "Karla", sans-serif;
+  line-height: 1.6;
+  color: #706f7b;
+  margin-bottom: 4rem;
+}
+
+.hero-content__text__btns {
+  display: flex;
+  gap: 2rem;
+  font-size: 1.6rem;
+  font-family: "Karla", sans-serif;
+}
+
+@media (max-width: 450px) {
+  .hero-content__text__btns {
+    flex-direction: column;
+  }
+}
+
+.hero-content__text__btns a {
+  text-decoration: none;
+  color: #ffffff;
+  font-weight: 700;
+}
+
+.hero-content__text__btns__book-ride {
+  background-color: #de8117;
+  padding: 1.8rem 3rem;
+  border-radius: 0.3rem;
+  box-shadow: 0 10px 15px 0 rgb(222 129 23 / 35%);
+  transition: all 0.3s;
+  border: 2px solid #de8117;
+}
+
+@media (max-width: 450px) {
+  .hero-content__text__btns__book-ride {
+    padding: 1.8rem 8rem;
+  }
+}
+
+.hero-content__text__btns__book-ride:hover {
+  box-shadow: 0 10px 15px 0 rgb(222 129 23 / 60%);
+  background-color: #de8117;
+}
+
+.hero-content__text__btns__learn-more {
+  background-color: #000000;
+  padding: 1.8rem 3rem;
+  border-radius: 0.3rem;
+  border: 2px solid #000000;
+  transition: all 0.3s;
+}
+
+.hero-content__text__btns__learn-more:hover {
+  background-color: transparent;
+  color: #010103;
+}
+
+.hero-content__perfume-img {
+  z-index: 2;
+  position: absolute;
+  right: 0;
+  width: 65%;
+  margin-top: 5rem;
+}
+
+@media (max-width: 800px) {
+  .hero-content__perfume-img {
+    display: none;
+  }
+}
+
+.colored-button {
+  color: white;
+  background-color: #de8117 !important;
+}
+
+.pick-section {
+  padding: 10rem 0;
+  position: relative;
+  z-index: 4;
+}
+
+.pick-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.pick-container__title {
+  margin: 0 auto;
+  text-align: center;
+  color: #010103;
+  max-width: 50rem;
+  margin-bottom: 5rem;
+}
+
+.pick-container__title p {
+  font-size: 1.6rem;
+  color: #706f7b;
+  line-height: 1.5;
+}
+
+.pick-container__title h3 {
+  font-size: 2.4rem;
+  font-weight: 500;
+}
+
+.pick-container__title h2 {
+  font-size: 4.2rem;
+  margin: 0.5rem 0 1rem 0;
+}
+
+.pick-container__perfume-content {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+@media (max-width: 1050px) {
+  .pick-container__perfume-content {
+    flex-direction: column;
+    gap: 5rem;
+  }
+}
+
+.pick-box {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+.pick-box button {
+  font-size: 2rem;
+  font-family: "Karla", sans-serif;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  padding: 1.5rem 2.5rem;
+  background-color: #e9e9e9;
+  transition: all 0.2s;
+  text-align: left;
+}
+
+.pick-box button:hover {
+  background-color: #de8117;
+  color: #ffffff;
+}
+
+.pick-box button:active {
+  background-color: #de8117;
+}
+
+.pick-perfume {
+  width: 50rem;
+  position: relative;
+}
+
+@media (max-width: 700px) {
+  .pick-perfume {
+    width: 100%;
+  }
+}
+
+.pick-perfume img {
+  width: 100%;
+  margin-top: 6rem;
+}
+
+.pick-description {
+  width: 27.1rem;
+}
+
+.pick-description__price {
+  width: 100%;
+  background-color: #de8117;
+  font-size: 1.8rem;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  color: white;
+  padding: 0.3rem 1.9rem;
+  white-space: nowrap;
+}
+
+.pick-description__price span {
+  font-size: 2.8rem;
+  font-weight: 700;
+  margin: 0 auto;
+}
+
+.pick-description__table {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  font-size: 1.35rem;
+}
+
+.pick-description__table__col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  text-align: center;
+  grid-template-rows: auto;
+  padding: 0.9rem 0.5rem;
+  border-bottom: 2px solid #706f7b;
+  border-right: 2px solid #706f7b;
+  border-left: 2px solid #706f7b;
+}
+
+.pick-description__table__col span:nth-child(1) {
+  border-right: 2px solid #706f7b;
+  align-self: center;
+}
+
+.cta-btn {
+  font-size: 2rem;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-weight: 700;
+  color: #ffffff;
+  font-family: "Karla", sans-serif;
+  background-color: #de8117;
+  padding: 1rem 1rem;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  margin-top: 1.4rem;
+  transition: all 0.3s;
+  box-shadow: 6px 6px 0 #efe9e9;
+}
+
+.cta-btn:hover {
+  background-color: #de8117;
+}
+
+.box-perfume {
+  gap: 11rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+@media (max-width: 1200px) {
+  .box-perfume {
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 700px) {
+  .box-perfume {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5rem;
+  }
+}
+
+.loader {
+  width: 48px;
+  height: 48px;
+  border: 5px solid #00000042;
+  border-bottom-color: #de8117;
+  border-radius: 50%;
+  display: inline-block;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 40%;
+  right: 43%;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.banner-section {
+  width: 100%;
+  height: auto;
+  display: flex;
+  background-color: #2d2d2d;
+  margin: 8rem 0;
+  padding: 6rem 0;
+  text-align: center;
+}
+
+.banner-content {
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+}
+
+.banner-content__text {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.banner-content__text h2 {
+  font-size: 5.2rem;
+  line-height: 1.3;
+}
+
+@media (max-width: 550px) {
+  .banner-content__text h2 {
+    font-size: 4.2rem;
+  }
+}
+
+.banner-content__text p {
+  font-size: 2.4rem;
+}
+
+@media (max-width: 550px) {
+  .banner-content__text p {
+    font-size: 2rem;
+  }
+}
+
+.banner-content__text span {
+  color: #de8117;
+  font-weight: 700;
+}
+
+.testimonials-section {
+  background-color: #f8f8f8;
+  padding: 3rem 0;
+  color: #010103;
+}
+
+.testimonials-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.testimonials-content__title {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  text-align: center;
+  max-width: 70rem;
+  margin-bottom: 5rem;
+}
+
+.testimonials-content__title h4 {
+  font-size: 2.2rem;
+  font-weight: 500;
+}
+.testimonials-content__title h2 {
+  font-size: 4.2rem;
+  margin-bottom: 1.4rem;
+}
+
+.testimonials-content__title p {
+  font-size: 1.6rem;
+  color: #706f7b;
+  line-height: 1.4;
+}
+
+.all-testimonials {
+  display: flex;
+  gap: 3rem;
+  width: 100%;
+  justify-content: center;
+  padding: 3rem;
+}
+
+@media (max-width: 1000px) {
+  .all-testimonials {
+    padding: 0;
+  }
+}
+
+.all-testimonials__box {
+  background-color: white;
+  box-shadow: 0 20px 40px 0 rgb(0 0 0 / 8%);
+  width: 54rem;
+  padding: 5.5rem;
+  position: relative;
+}
+
+@media (max-width: 1000px) {
+  .all-testimonials__box {
+    padding: 5rem 3rem;
+  }
+}
+
+.all-testimonials__box p {
+  font-size: 2.2rem;
+  font-weight: 500;
+}
+
+.all-testimonials__box__name {
+  display: flex;
+}
+
+.all-testimonials__box__name__profile {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  margin-top: 3rem;
+}
+
+.all-testimonials__box__name__profile img {
+  width: 7rem;
+  height: 7rem;
+  border-radius: 50%;
+}
+
+.all-testimonials__box__name__profile h4 {
+  font-size: 1.8rem;
+}
+
+.all-testimonials__box__name__profile p {
+  font-size: 1.6rem;
+  font-weight: 400;
+}
+
+.quotes-icon {
+  font-size: 4.2rem;
+  color: #de8117;
+  position: absolute;
+  bottom: 33px;
+  right: 60px;
+}
+
+@media (max-width: 470px) {
+  .quotes-icon {
+    display: none;
+  }
+}
+
+@media (max-width: 900px) {
+  .box-2 {
+    display: none;
+  }
+}
+
+.download-section {
+  background: url("/src/images/banners/bg02.png");
+  background-color: #f8f8f8;
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: auto;
+  padding: 10rem 0;
+}
+
+@media (max-width: 700px) {
+  .download-section {
+    background-image: none;
+  }
+}
+
+.download-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  max-width: 55rem;
+  text-align: left;
+}
+
+@media (max-width: 700px) {
+  .download-text {
+    text-align: center;
+    margin: 0 auto;
+  }
+}
+
+.download-text h2 {
+  font-size: 4.2rem;
+  color: #010103;
+  font-weight: 800;
+}
+
+.download-text p {
+  font-size: 1.6rem;
+  color: #706f7b;
+  line-height: 1.5;
+}
+
+.download-text__btns {
+  display: flex;
+  gap: 3rem;
+  margin-top: 2rem;
+}
+
+@media (max-width: 700px) {
+  .download-text__btns {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 550px) {
+  .download-text__btns {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.download-text__btns img {
+  width: 40%;
+  cursor: pointer;
+}
+
+@media (max-width: 550px) {
+  .download-text__btns img {
+    width: 22rem;
+  }
+}
+
+footer {
+  background-color: #ffffff;
+  padding: 10rem 0;
+}
+
+.footer-content {
+  display: grid;
+  color: #010103;
+  grid-template-columns: 27fr 21fr 21fr 21fr;
+  gap: 8rem;
+  justify-content: center;
+  text-align: left;
+  color: #010103;
+}
+
+@media (max-width: 1100px) {
+  .footer-content {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 650px) {
+  .footer-content {
+    grid-template-columns: 1fr;
+  }
+}
+
+.footer-content__1 {
+  list-style: none;
+}
+
+@media (max-width: 650px) {
+  .footer-content__1 {
+    text-align: center;
+  }
+}
+
+.footer-content__1 li a {
+  text-decoration: none;
+  color: #010103;
+  transition: all 0.2s;
+}
+
+.footer-content__1 li a:hover {
+  color: #de8117;
+}
+
+.footer-content__1 li:nth-child(1) {
+  font-size: 2.4rem;
+  margin-bottom: 1.5rem;
+}
+
+.footer-content__1 li:nth-child(1) span {
+  font-weight: 700;
+}
+
+.footer-content__1 li:nth-child(2) {
+  font-size: 1.6rem;
+  color: #706f7b;
+  line-height: 1.7;
+  margin-bottom: 3rem;
+}
+
+.footer-content__1 li:nth-child(3),
+.footer-content__1 li:nth-child(4) {
+  font-size: 1.6rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+
+.footer-content__2 {
+  list-style: none;
+}
+
+@media (max-width: 650px) {
+  .footer-content__2 {
+    text-align: center;
+  }
+}
+
+.footer-content__2 a {
+  text-decoration: none;
+  color: #010103;
+  transition: all 0.2s;
+}
+
+.footer-content__2 a:hover {
+  color: #de8117;
+}
+
+.footer-content__2 li {
+  font-size: 1.6rem;
+  margin-bottom: 1rem;
+}
+
+.footer-content__2 li:nth-child(1) {
+  font-size: 2.4rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  cursor: auto;
+}
+
+.footer-content__2 input {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 26px;
+  background-color: #ececec;
+  border-width: 1px;
+  border-color: transparent;
+  padding: 10px 60px;
+  outline: none;
+  margin-top: 1rem;
+}
+
+@media (max-width: 1100px) {
+  .footer-content__2 input {
+    width: 100%;
+  }
+}
+
+.submit-email {
+  text-decoration: none;
+  color: #ffffff;
+  font-weight: 700;
+  background-color: #de8117;
+  padding: 1.5rem 2.5rem;
+  border-radius: 0.3rem;
+  box-shadow: 0 10px 15px 0 rgb(222 129 23 / 25%);
+  transition: all 0.3s;
+  border: 2px solid #de8117;
+  font-size: 1.6rem;
+  width: fit-content;
+  cursor: pointer;
+  width: 100%;
+}
+
+.submit-email:hover {
+  box-shadow: 0 10px 15px 0 rgb(222 129 23 / 40%);
+  background-color: #de8117;
+}
+
+.men-section {
+  max-width: 133rem;
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 13rem 2rem;
+  margin: 0 auto;
+}
+
+.brands-filter {
+  display: flex;
+  flex-direction: column;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+@media (max-width: 550px) {
+  .filter-table {
+    display: none;
+  }
+}
+
+.perfume-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1rem;
+}
+
+@media (max-width: 700px) {
+  .perfume-list {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.filter-table {
+  align-self: flex-start;
+}
+
+.filter-table p {
+  font-size: 2rem;
+  font-weight: 800;
+  margin-top: 3rem;
+}
+
+.filter-table button {
+  font-family: "Karla", sans-serif;
+  padding-top: 0.7rem;
+  padding-bottom: 0.7rem;
+  width: 55%;
+  background-color: #de8117;
+  border: none;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+  box-shadow: 0 2px 15px 0 rgb(222 129 23 / 35%);
+  transition: all 0.3s;
+}
+
+.filter-table button:hover {
+  background-color: #ff7b00;
+}
+
+.brand-checkbox {
+  display: flex;
+  align-items: center;
+  margin-bottom: 6px;
+  font-size: 1.5rem;
+}
+
+.brand-name {
+  white-space: nowrap;
+}
+
+.brand-checkbox input[type="checkbox"] {
+  display: none; /* Ascunde checkbox-ul nativ */
+}
+
+.brand-checkbox span.checkbox-custom {
+  display: inline-block;
+  width: 20px; /* Schimbă dimensiunea checkbox-ului */
+  height: 20px; /* Schimbă dimensiunea checkbox-ului */
+  border: 1px solid #000; /* Adaugă o margine pentru checkbox */
+  cursor: pointer; /* Transformă cursorul în pointer la hover */
+  position: relative;
+  margin-right: 10px;
+}
+
+.brand-checkbox input[type="checkbox"]:checked + span.checkbox-custom::after {
+  content: ""; /* Adaugă un conținut pentru elementul pseudo */
+  position: absolute;
+  top: 3px; /* Ajustează poziția conținutului bifat */
+  left: 3px; /* Ajustează poziția conținutului bifat */
+  width: 12px; /* Schimbă dimensiunea conținutului bifat */
+  height: 12px; /* Schimbă dimensiunea conținutului bifat */
+  background-color: #de8117; /* Schimbă culoarea conținutului bifat */
+}
+
+.perfume-item {
+  padding-top: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.perfume-item img {
+  margin-bottom: 10px;
+  width: 100%;
+  max-width: 100%;
+}
+
+.perfume-info {
+  text-align: center;
+}
+
+.perfume-info h3 {
+  font-size: 1.5rem;
+}
+
+.perfume-info h4 {
+  font-size: 2.3rem;
+  font-weight: 800;
+}
+
+.perfume-info h5 {
+  margin-top: 10px;
+  font-size: 2rem;
+}
+
+.perfume-item a {
+  color: #010103;
+  text-decoration: none;
+}
+
+.perfume-item h3 {
+  transition: all 0.2s ease-in-out;
+}
+
+.perfume-item h4 {
+  transition: all 0.2s ease-in-out;
+}
+
+.perfume-item h5 {
+  transition: all 0.2s ease-in-out;
+}
+
+.perfume-item:hover h3 {
+  color: #de8117;
+}
+.perfume-item:hover h4 {
+  color: #de8117;
+}
+.perfume-item:hover h5 {
+  color: #de8117;
+}
+
+@media (max-width: 550px) {
+  .perfume-list {
+    grid-template-columns: 1fr 1fr; /* Ajustează coloanele pentru a afișa două parfumuri pe rând */
+    gap: 1rem; /* Opțional: adaugă un spațiu între parfumuri */
+  }
+  @media (max-width: 550px) {
+    .perfume-item img {
+      width: 100%; /* Face imaginile responsive, ocupând întreaga lățime disponibilă */
+      max-width: 100%; /* Asigură că imaginea nu depășește lățimea containerului părinte */
+      height: auto; /* Menține proporțiile imaginilor */
+    }
+  }
+}
+
+.hp-perfume-section {
+  max-width: 133rem;
+  width: 100%;
+  height: auto;
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  justify-content: space-between;
+  align-items: center;
+  padding: 13rem 2rem;
+  margin: 0 auto;
+}
+
+.hp-perfume-left {
+  display: flex;
+  flex-direction: column;
+}
+
+.hp-perfume-left img {
+  align-self: center;
+  width: 70%;
+}
+
+.hp-perfume-details h1 {
+  font-size: 5rem;
+  font-weight: 800;
+}
+
+.hp-perfume-details h2 {
+  font-size: 3rem;
+}
+
+.hp-perfume-details {
+  align-self: flex-start;
+  margin-top: 3rem;
+  width: 100%;
+}
+
+.hp-perfume-details h3 {
+  font-size: 2rem;
+  margin-top: 4rem;
+}
+
+.stocktext {
+  margin-top: 6rem;
+  font-size: 2rem;
+  display: flex;
+}
+
+.stocktext p {
+  align-self: center;
+}
+
+.hp-perfume-details button {
+  margin-top: 2rem;
+  padding: 1rem 0;
+  font-family: "Karla", sans-serif;
+  font-size: 2rem;
+  width: 80%;
+  background-color: #de8117;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  cursor: pointer;
+  box-shadow: 0 10px 15px 0 rgb(222 129 23 / 35%);
+  transition: all 0.3s;
+}
+
+.hp-perfume-details button:hover {
+  box-shadow: 0 10px 15px 0 rgb(222 129 23 / 50%);
+  background-color: #ff7b00;
+}
+
+.checkxd {
+  align-self: center;
+  margin-right: 5px;
+}
+
+.hp-perfume-description {
+  margin-top: 3.5rem;
+}
+
+.hp-perfume-title {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+.hp-perfume-description p {
+  margin-top: 1.5rem;
+  font-size: 1.6rem;
+  color: #706f7b;
+}
+
+.hp-perfume-left {
+  order: 1;
+}
+
+.hp-perfume-details {
+  order: 2;
+}
+
+.hp-perfume-description {
+  order: 3;
+}
+
+@media (max-width: 600px) {
+  .hp-perfume-section {
+    display: flex;
+    flex-direction: column;
+  }
+  .hp-perfume-left img {
+    width: 100%;
+  }
+  .hp-perfume-details button {
+    width: 100%;
+    padding: 1.5rem 0;
+  }
+  .hp-perfume-details h1 {
+    font-size: 3rem;
+  }
+  .hp-perfume-details h2 {
+    font-size: 2.2rem;
+  }
+  .hp-perfume-details h3 {
+    font-size: 2.7rem;
+  }
+  .stocktext {
+    margin-bottom: 1.2rem;
+  }
+}
+
+.notfoundpage {
+  max-width: 133rem;
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 19rem 2rem;
+  margin: 0 auto;
+  height: 57vh;
+}
+
+.notfoundpage h1 {
+  font-size: 5.2rem;
+  font-weight: 800;
+}
+
+.notfoundpage h2 {
+  margin-top: 10px;
+  font-size: 3rem;
+}
+
+.notfoundpage a {
+  font-size: 2rem;
+  text-decoration: none;
+  color: white;
+  background-color: #de8117;
+  padding: 1rem 4rem;
+  border-radius: 5px;
+  font-family: "Karla", sans-serif;
+  font-weight: 600;
+  margin-top: 5rem;
+}
+
+.signup-section {
+  max-width: 133rem;
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 15rem 15rem 10rem 15rem;
+  margin: 0 auto;
+}
+
+.signup-form {
+  display: flex;
+  flex-direction: column;
+  margin-top: 3rem;
+}
+
+.signup-form input {
+  margin: 0.5rem 0;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 26px;
+  background-color: #ececec;
+  border-width: 1px;
+  border-color: transparent;
+  padding: 7px 40px;
+  outline: none;
+  font-family: "Karla", sans-serif;
+}
+
+.signup-section h1 {
+  font-size: 4.2rem;
+}
+
+.signup-section p {
+  font-size: 1.6rem;
+  max-width: 60rem;
+  text-align: center;
+  margin-top: 1.6rem;
+  color: #706f7b;
+}
+
+.signup-button {
+  font-family: "Karla", sans-serif;
+  padding: 10px 30px;
+  background-color: #de8117;
+  border: none;
+  color: white;
+  margin-top: 0.5rem;
+  cursor: pointer;
+  font-size: 1.6rem;
+}
+
+.signup-section p a {
+  text-decoration: none;
+  color: black;
+  font-weight: 700;
+}
+
+.profile-section {
+  max-width: 133rem;
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 15rem 15rem 7rem 15rem;
+  margin: 0 auto;
+}
+
+.profile-email {
+  font-weight: 800;
+}
+
+.signup-section h2 {
+  font-size: 2rem;
+  margin-bottom: 4rem;
+  font-weight: 800;
+  color: red;
+}
+
+.signup-section h3 {
+  font-size: 2rem;
+  margin-bottom: 4rem;
+  font-weight: 800;
+}
+
+.profile-section-buttons {
+  margin-top: 4rem;
+  display: flex;
+  gap: 10px;
+}
+
+.profile-section-buttons button {
+  border: none;
+  cursor: pointer;
+  background-color: #de8117;
+  color: white;
+  font-family: "Karla", sans-serif;
+  padding: 1rem 2rem;
+  font-weight: bold;
+}
+
+.brands-section {
+  max-width: 133rem;
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 14rem 15rem 9rem 15rem;
+  margin: 0 auto;
+}
+
+.brands-section {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  justify-content: center;
+}
+
+@media (max-width: 1100px) {
+  .brands-section {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 850px) {
+  .brands-section {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 650px) {
+  .brands-section img {
+    width: 130px;
+  }
+}
+
+@media (max-width: 450px) {
+  .brands-section img {
+    width: 100px;
+  }
+}
+
+.about-section {
+  max-width: 133rem;
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  padding: 15rem 15rem 10rem 15rem;
+  margin: 0 auto;
+  background: url("/src/images/banners/bgabout.png");
+  background-color: #f8f8f8;
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.about-section p {
+  font-size: 1.8rem;
+}
+
+.about-section-text p span {
+  font-weight: 700;
+}
+
+@media (max-width: 550px) {
+  .about-section {
+    padding: 15rem 2.2rem 10rem 2.2rem;
+  }
+}
+
+.about-section-text h1 {
+  font-size: 4rem;
+  font-weight: 800;
+  margin-bottom: 3rem;
+}
+
+@media (max-width: 800px) {
+  .toomuchtext {
+    display: none;
+  }
+  .about-section {
+    padding: 15rem 3rem 10rem 3rem;
+  }
+}
+
+@media (max-width: 500px) {
+  .about-section h1 {
+    text-align: center;
+  }
 }
