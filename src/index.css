@@ -384,11 +384,6 @@ body {
   }
 }
 
-.colored-button {
-  color: white;
-  background-color: #de8117 !important;
-}
-
 .pick-section {
   padding: 10rem 0;
   position: relative;
@@ -581,6 +576,11 @@ body {
   transform: translate(-50%, -50%);
   top: 40%;
   right: 43%;
+}
+
+.colored-button {
+  color: white !important;
+  background-color: #de8117 !important;
 }
 
 @keyframes rotation {
