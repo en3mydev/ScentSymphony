@@ -1048,27 +1048,27 @@ footer {
 }
 
 .brand-checkbox input[type="checkbox"] {
-  display: none; /* Ascunde checkbox-ul nativ */
+  display: none;
 }
 
 .brand-checkbox span.checkbox-custom {
   display: inline-block;
-  width: 20px; /* Schimbă dimensiunea checkbox-ului */
-  height: 20px; /* Schimbă dimensiunea checkbox-ului */
-  border: 1px solid #000; /* Adaugă o margine pentru checkbox */
-  cursor: pointer; /* Transformă cursorul în pointer la hover */
+  width: 20px;
+  height: 20px;
+  border: 1px solid #000;
+  cursor: pointer;
   position: relative;
   margin-right: 10px;
 }
 
 .brand-checkbox input[type="checkbox"]:checked + span.checkbox-custom::after {
-  content: ""; /* Adaugă un conținut pentru elementul pseudo */
+  content: "";
   position: absolute;
-  top: 3px; /* Ajustează poziția conținutului bifat */
-  left: 3px; /* Ajustează poziția conținutului bifat */
-  width: 12px; /* Schimbă dimensiunea conținutului bifat */
-  height: 12px; /* Schimbă dimensiunea conținutului bifat */
-  background-color: #de8117; /* Schimbă culoarea conținutului bifat */
+  top: 3px;
+  left: 3px;
+  width: 12px;
+  height: 12px;
+  background-color: #de8117;
 }
 
 .perfume-item {
@@ -1128,16 +1128,22 @@ footer {
   color: #de8117;
 }
 
+@media (min-width: 1000px) {
+  .perfume-item {
+    padding: 3.5rem;
+  }
+}
+
 @media (max-width: 550px) {
   .perfume-list {
-    grid-template-columns: 1fr 1fr; /* Ajustează coloanele pentru a afișa două parfumuri pe rând */
-    gap: 1rem; /* Opțional: adaugă un spațiu între parfumuri */
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
   }
   @media (max-width: 550px) {
     .perfume-item img {
-      width: 100%; /* Face imaginile responsive, ocupând întreaga lățime disponibilă */
-      max-width: 100%; /* Asigură că imaginea nu depășește lățimea containerului părinte */
-      height: auto; /* Menține proporțiile imaginilor */
+      width: 100%;
+      max-width: 100%;
+      height: auto;
     }
   }
 }
