@@ -6,7 +6,7 @@ A fragrance e-commerce platform designed for purchasing perfumes, colognes, and 
 
 Check the live demo: [Live Demo](https://scentsymphony.tech/)
 
-**Build with:**
+**Built with:**
 
 » React JS <br>
 » CSS <br>
