@@ -4,7 +4,7 @@
 
 A fragrance e-commerce platform designed for purchasing perfumes, colognes, and fragrances. This website offers an intuitive interface enabling users to explore, compare, and purchase an extensive array of scents from various brands, sizes, fragrance families, and price ranges. It provides an immersive experience for customers to discover, select, and buy their desired perfumes, ensuring a seamless and convenient shopping journey.
 
-Check the live demo: [Live Demo](https://scentsymphony.tech/)
+Check the live demo: [Live Demo](https://scentsymphony.netlify.app/)
 
 **Built with:**
 
